@@ -14442,9 +14442,9 @@ img {
   -ms-flex-align: center;
   align-items: center;
   gap: 2.188rem;
-  -webkit-transition: 0.4s all;
-  -o-transition: 0.4s all;
-  transition: 0.4s all;
+  -webkit-transition: opacity 0.4s visibility 0.4s;
+  -o-transition: opacity 0.4s visibility 0.4s;
+  transition: opacity 0.4s visibility 0.4s;
 }
 .header .menu__list a {
   -webkit-transition: 0.3s all;
@@ -15907,17 +15907,17 @@ img {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    row-gap: 5rem;
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    position: fixed;
     overflow-y: auto;
+    position: fixed;
     top: 0;
-    right: 0;
-    background: rgba(0, 50, 107, 0.9647058824);
-    padding: 1.25rem;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.9);
     z-index: 100;
-    row-gap: 5rem;
+    padding: 1.25rem;
     padding-bottom: 3rem;
     opacity: 0;
     visibility: hidden;
@@ -15928,6 +15928,10 @@ img {
   .header .menu__list.active {
     opacity: 1;
     visibility: visible;
+    right: 0;
+    -webkit-transition: opacity 0.4s, visibility 0.4s, right 0s;
+    -o-transition: opacity 0.4s, visibility 0.4s, right 0s;
+    transition: opacity 0.4s, visibility 0.4s, right 0s;
   }
   .header .menu__list li > ul {
     position: static;
@@ -15967,9 +15971,9 @@ img {
   .speakers__container .speakers__item .speakers__img {
     height: 27.5rem;
   }
-  .speakers__img:hover {
-    height: 27.5rem;
-  }
+  /*  .speakers__img:hover {
+      height: 27.5rem;
+  } */
   .speakers__img {
     width: 100%;
   }
@@ -16036,12 +16040,22 @@ img {
   .info__img {
     max-width: 100%;
   }
+  .speakers__page .col-md-3:first-child .speakers__img {
+    height: 100%;
+  }
   .speakers__container .speakers__item:first-child .speakers__img {
-    height: 20rem;
+    height: 100%;
   }
+  .speakers__page .speakers__img {
+    height: 100%;
+  }
+  .speakers__page .speakers__img:hover {
+    height: 100%;
+  }
+  /* 
   .speakers__container .speakers__item .speakers__img {
-    height: 20rem;
-  }
+      height: 100%;
+  } */
   .agenda__item {
     gap: 1rem;
   }
@@ -16114,12 +16128,6 @@ img {
 @media (max-width: 400px) {
   .registration__btn {
     display: none;
-  }
-  .speakers__container .speakers__item:first-child .speakers__img {
-    height: 12rem;
-  }
-  .speakers__container .speakers__item .speakers__img {
-    height: 12rem;
   }
 }
 @media (max-width: 380px) {
